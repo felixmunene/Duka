@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/540a0c5333.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Css for the base.html-->
+    <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css">
+    {% block extra_head %}{% endblock %}
+    {% block extra_css %}{% endblock %}
+    {% block title %}<title>Shop</title>{% endblock %}
+    
+   
+
+</head>
+<body>
+    <header>
+       <div class="logo">
+           <h1 class="logo-text"> <span>Mutuma</span> Shop</h1>
+       </div> 
+       <i class="fa fa-bars menu-toggle"></i>
+       <ul class="nav">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Dashboard</a></li>
+           <li>
+               <a href="#">
+                <i class="fa fa-user"></i>
+                Username
+                <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                </a>
+               <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#" class="logout">Logout</a></li> 
+               </ul>
+           </li>
+       </ul>
+    </header>
+    <!--JQuery cdn for button on click event-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous"></script>
+    <!--Custom script to handle the click event-->
+    <script src="{% static 'scripts.js' %}"></script>
+{% block extra_html %}{% endblock %}
+</body>
+</html>

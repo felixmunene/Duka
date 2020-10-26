@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'Physical/products_form.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block extra_html %}
+<form name = "form" action = "{% url 'Physical:productupdateview' %}" method = "POST" >
+    {% csrf_token %}
+    {{form.as_table}}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

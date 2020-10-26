@@ -1,0 +1,81 @@
+{% extends "../base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+    {% block extra_head %}
+    <style>
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+            }
+        th, td {
+            padding: 1vw;
+            text-align: left;
+            border-bottom: 1px solid lightgreen;
+        }
+    </style>
+    {% endblock %}
+    <!--Custom css for Admin panel-->
+    {% block extra_css %}
+    <link href="{% static 'Physical/admin.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+</head>
+<body>
+   {%block extra_html%}
+   
+   <!--Admin page wrapper-->
+   <div class="admin-wrapper">
+        <!--Left Side bar-->
+        <div class="left-sidebar">
+            <ul>
+                <li><a href="#">Stock</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+
+        </div>
+        <!--// Left Sidebar-->
+        <!--Admin Content-->
+        <div class="admin-content">
+            <div class="button-group">
+                <a class="btn btn-primary" href = "{% url 'Physical:productupdateview' %}">Receive Items</a> 
+                <a href="{% url 'Physical:sellstock' %}" class="btn btn-secondary">Make sale</a>
+                <a href="" class=""><i class="fa fa-shopping-cart" style="font-size:24px"></i> </a>             
+            </div>
+            <div class="content">
+                <h2 class= "page-title">Cart Items</h2>
+                <table>
+                    <thead>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                    </thead>
+                    <tbody>
+                        {% for item in cart %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.product_model }}</td>
+                            <td>{{ item.product_type }}</td>
+                            <td>{{ item.quantity }}</td>
+                            
+                            <td><a href="{% url 'Physical:cart_remove' item.id %}" class="btn btn-secondary">Sell Item</a></td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--//Admin Content-->
+   </div>
+   {% endblock %} 
+</body>
+</html>

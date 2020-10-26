@@ -1,0 +1,61 @@
+header ul li ul li a {
+    display: none;
+}
+.admin-wrapper {
+    display: flex;
+    
+    height: 91vh;
+}
+.admin-wrapper .left-sidebar {
+    flex: 2;
+    height: 100%;
+    width: auto;
+    background: #234a57;
+    
+}
+.admin-wrapper .left-sidebar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.admin-wrapper .left-sidebar ul li a {
+    padding: 18px;
+    display: block;
+    color: whitesmoke;
+    border-bottom: 1px solid darkgreen;  
+}
+.admin-wrapper .left-sidebar ul li a:hover{
+    background-color: teal;
+    
+}
+.admin-wrapper .admin-content {
+    flex: 8;
+    height: 100%;
+    padding: 2.0vh 2vh 3vh;   
+    overflow-y: scroll;
+}
+.admin-wrapper .admin-content .button-group {
+    text-align: center;
+    align-content: center;
+}
+.admin-wrapper .admin-content .button-group a{
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.admin-wrapper .admin-content .content table {
+    align-content: center;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+}
+.admin-wrapper .admin-content .content table thead tr {
+    padding: 1vw;
+    text-align: left;
+    border-bottom: 1px solid lightgreen;
+}
+.admin-wrapper .admin-content .content table tbody tr {
+    padding: 1vw;
+    text-align: left;
+    border-bottom: 1px solid lightgreen;
+}
